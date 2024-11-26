@@ -11,6 +11,7 @@
 来源： 2024 ICPC National Invitational Collegiate Programming Contest, Wuhan Site
 
 只需知道
+
 $$
 \bigoplus_{i=1}^{n}i =
 \begin{cases}
