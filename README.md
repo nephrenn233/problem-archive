@@ -1,6 +1,6 @@
 # problem-archive
 
-好题归档
+好题 / trick 归档
 
 ## [CF1155D Beautiful Array](https://codeforces.com/contest/1155/problem/D)
 
