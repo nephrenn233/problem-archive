@@ -2,17 +2,14 @@
 using i64 = long long;
 using PII = std::pair<int, int>;
 
-void solve()
-{
+void solve() {
     int n, m, k;
-
 	std::cin >> n >> m >> k;
 
 	std::vector<PII> seg(m);
 	std::vector<int> a(n + 2, 0);
 
-	for(auto &[l, r] : seg)
-	{
+	for(auto &[l, r] : seg) {
 		std::cin >> l >> r;
 		++a[l], --a[r + 1];
 	}
@@ -22,8 +19,7 @@ void solve()
 	std::vector<int> cnt1(n + 1, 0), cnt2(n + 1, 0);
 	int cnt0 = 0;
 
-	for(int i = 1; i <= n; ++i)
-	{
+	for(int i = 1; i <= n; ++i) {
 		a[i] += a[i - 1];
 
 		cnt0 += (a[i] == 0);
@@ -33,12 +29,10 @@ void solve()
 
 	// case 1
 	int mx1 = 0, mx2 = 0, ans1 = 0;
-	for(int i = 0; i < m; ++i)
-	{
+	for(int i = 0; i < m; ++i) {
 		auto [l, r] = seg[i];
 		int res = cnt1[r] - cnt1[l - 1];
-		if(res > mx1)
-		{
+		if(res > mx1) {
 			mx2 = mx1;
 			mx1 = res;
 		}
@@ -48,9 +42,10 @@ void solve()
 
 	int p = 0, ans2 = 0;
 	std::priority_queue<PII, std::vector<PII>, std::greater<PII>> q;
-	for(int i = 1; i <= n; ++i)
-	{
-		while(q.size() && q.top().first < i) q.pop();
+	for(int i = 1; i <= n; ++i) {
+		while(q.size() && q.top().first < i) {
+			q.pop();
+		}
 		while(p < m && seg[p].first == i) {
             q.push(std::make_pair(seg[p].second, p));
             ++p;
@@ -77,8 +72,7 @@ void solve()
 	std::cout << std::max(ans1, ans2) + cnt0 << "\n";
 }	
 
-int main()
-{
+int main() {
 	std::ios::sync_with_stdio(false);
 	std::cin.tie(nullptr);
 
