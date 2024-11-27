@@ -22,6 +22,6 @@ n+1 &\quad{n \bmod 4 = 2} \\
 \end{cases}
 $$
 
-## [CF1890E1](https://codeforces.com/contest/1890/problem/E1)
+## [CF1890E1 Doremy's Drying Plan (Easy Version)](https://codeforces.com/contest/1890/problem/E1)
 
-给出数轴上的一系列线段，通过优先队列在 $O(W \log n)$ 的时间内维护每个点被哪些线段所覆盖。
+给出数轴上的一系列线段，通过优先队列在 $O(W \log n)$ 的时间内维护每个点被哪些线段所覆盖，其中 $W$ 为值域。
